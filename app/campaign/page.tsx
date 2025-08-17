@@ -1,0 +1,1 @@
+export default function Campaign(){return(<div><h1>Campaign / Story Mode</h1><p>Scaffold ready.</p></div>)}

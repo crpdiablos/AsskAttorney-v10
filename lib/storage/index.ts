@@ -1,0 +1,5 @@
+export type JournalEntry = { id: string; title: string; date: string; notes: string }
+export interface CloudAdapter { saveJournal(userId: string, entries: JournalEntry[]): Promise<void>; loadJournal(userId: string): Promise<JournalEntry[]>; saveReplay(userId: string, text: string): Promise<string> }
+export class LocalAdapter implements CloudAdapter { async saveJournal(u:string,e:JournalEntry[]){ localStorage.setItem('aa_journal_'+u, JSON.stringify(e)) } async loadJournal(u:string){ return JSON.parse(localStorage.getItem('aa_journal_'+u)||'[]') } async saveReplay(u:string,t:string){ const id=Math.random().toString(36).slice(2); localStorage.setItem('aa_replay_'+u+'_'+id,t); return id } }
+export class S3Adapter implements CloudAdapter { async saveJournal(){ throw new Error('S3Adapter not configured') } async loadJournal(){ return [] } async saveReplay(){ return '' } }
+export class GDriveAdapter implements CloudAdapter { async saveJournal(){ throw new Error('GDriveAdapter not configured') } async loadJournal(){ return [] } async saveReplay(){ return '' } }
