@@ -1,0 +1,1 @@
+export default function FAQ(){return(<div><h1>FAQ</h1><ul><li>Educational simulation only.</li><li>API key optional.</li><li>Replays export via Journal.</li></ul></div>)}
