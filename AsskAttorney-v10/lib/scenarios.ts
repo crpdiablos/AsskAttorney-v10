@@ -1,1 +1,0 @@
-export const RANDOM_SCENARIOS=['Motion to continue due to late disclosure','Small claims refund','Eviction habitability','Family temp custody','Traffic improper signage','Contract non-delivery'];

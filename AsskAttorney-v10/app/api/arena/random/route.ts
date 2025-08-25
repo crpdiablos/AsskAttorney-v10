@@ -1,1 +1,0 @@
-import { NextResponse } from 'next/server'; const seeds=['Motion to continue due to late disclosure','Small claims refund','Eviction habitability','Family temp custody','Traffic improper signage','Contract non-delivery']; export async function GET(){ return NextResponse.json({seed: seeds[Math.floor(Math.random()*seeds.length)]}) }
